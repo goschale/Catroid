@@ -266,7 +266,7 @@ pipeline {
                     stages {
                         stage('Pull Request Suite') {
                             when {
-                                env.PULL_REQUEST_SUITE.toBoolean()
+                                env.PULL_REQUEST_SUITE true
                             }
                             steps {
                                 catchError(buildResult: 'FAILURE' ,stageResult: 'FAILURE') {
