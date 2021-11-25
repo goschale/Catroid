@@ -71,6 +71,13 @@ pipeline {
         booleanParam name: 'BUILD_ALL_FLAVOURS', defaultValue: false, description: 'When selected all flavours are built and archived as artifacts that can be installed alongside other versions of the same APK.'
         booleanParam name: 'UNIT_TEST_DEBUG', defaultValue: false, description: 'When selected the Unit Test suite prints the currently running tests and any output that it might produce'
         booleanParam name: 'INCLUDE_HUAWEI_FILES', defaultValue: false, description: 'Embed any huawei files that are needed'
+        booleanParam name: 'PULL_REQUEST_SUITE', defaultValue: true, description:''
+        booleanParam name: 'STAND_ALONE', defaultValue: true, description:''
+        booleanParam name: 'UNT_TESTS', defaultValue: true, description:''
+        booleanParam name: 'INSTRUMENTED_UNIT_TESTS', defaultValue: true, description:''
+        booleanParam name: 'TESTRUNNER_TESTS', defaultValue: true, description:''
+        booleanParam name: 'QUARANTINED_TESTS', defaultValue: true, description:''
+        booleanParam name: 'RTL_TESTS', defaultValue: true, description:''
         string name: 'DEBUG_LABEL', defaultValue: '', description: 'For debugging when entered will be used as label to decide on which slaves the jobs will run.'
         string name: 'DOCKER_LABEL', defaultValue: '', description: 'When entered will be used as label for docker catrobat/catroid-android image to build'
     }
