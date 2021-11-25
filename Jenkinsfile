@@ -265,6 +265,9 @@ pipeline {
 
                     stages {
                         stage('Pull Request Suite') {
+                            when {
+                                env.PULL_REQUEST_SUITE.toBoolean()
+                            }
                             steps {
                                 catchError(buildResult: 'FAILURE' ,stageResult: 'FAILURE') {
                                     sh '''./gradlew copyAndroidNatives -PenableCoverage -PlogcatFile=pull_request_suite_logcat.txt -Pemulator=android28 \
