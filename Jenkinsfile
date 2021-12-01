@@ -73,7 +73,19 @@ pipeline {
         booleanParam name: 'INCLUDE_HUAWEI_FILES', defaultValue: false, description: 'Embed any huawei files that are needed'
         string name: 'DEBUG_LABEL', defaultValue: '', description: 'For debugging when entered will be used as label to decide on which slaves the jobs will run.'
         string name: 'DOCKER_LABEL', defaultValue: '', description: 'When entered will be used as label for docker catrobat/catroid-android image to build'
-        separator(name: "TEST_STAGES", sectionHeader: "Test Stages")
+        separator(name: "TEST_STAGES", sectionHeader: "Test Stages - CAUTION: The PR needs to be rebuild again with all test stages enabled before Code Review!!",
+        			separatorStyle: "border-width: 0",
+			sectionHeaderStyle: """
+				background-color: #ff0004;
+				text-align: center;
+				padding: 4px;
+				color: #ffffff;
+				font-size: 11px;
+				font-weight: normal;
+				font-family: 'Orienta', sans-serif;
+				letter-spacing: 1px;
+				font-style: italic;
+			""")
         booleanParam name: 'PULL_REQUEST_SUITE', defaultValue: true, description:'Disables Pull request suite'
         booleanParam name: 'STANDALONE', defaultValue: true, description:'When selected, no standalone APK will be built'
         booleanParam name: 'UNT_TESTS', defaultValue: true, description:'Disables Unit Tests'
