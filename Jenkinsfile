@@ -80,7 +80,7 @@ pipeline {
 				text-align: center;
 				padding: 4px;
 				color: #ffffff;
-				font-size: 11px;
+				font-size: 20px;
 				font-weight: normal;
 				font-family: 'Orienta', sans-serif;
 				letter-spacing: 1px;
