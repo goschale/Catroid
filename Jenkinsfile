@@ -76,10 +76,10 @@ pipeline {
         separator(name: "TEST_STAGES", sectionHeader: "Test Stages - CAUTION: The PR needs to be rebuild again with all test stages enabled before Code Review!!",
         			separatorStyle: "border-width: 0",
 			sectionHeaderStyle: """
-				background-color: #ff0004;
+				background-color: #ffff00;
 				text-align: center;
 				padding: 4px;
-				color: #ffffff;
+				color: #000000;
 				font-size: 20px;
 				font-weight: normal;
 				font-family: 'Orienta', sans-serif;
