@@ -143,9 +143,7 @@ pipeline {
                                         }
                                         if (env.INCLUDE_HUAWEI_FILES?.toBoolean()) {
                                             sh "cp /home/user/huawei/agconnect-services.json catroid/src/agconnect-services.json"
-                                        }
-                                    }
-
+                               DEVOPS-669-FEATURE
                                     // Build the flavors so that they can be installed next independently of older versions.
                                     sh "./gradlew ${webTestUrlParameter()} -Pindependent='#$env.BUILD_NUMBER $env.BRANCH_NAME' assembleCatroidDebug ${allFlavoursParameters()}"
 
@@ -219,7 +217,13 @@ pipeline {
 
                             post {
                                 always {
-                                    postEmulator 'instrumented_unit'
+                                    //postEmulator 'instrumented_unit'
+                                    jacoco( 
+                                        execPattern: 'target/*.exec',
+                                        classPattern: 'target/classes',
+                                        sourcePattern: 'src/main/java',
+                                        exclusionPattern: 'src/test*'
+                                    )
                                 }
                             }
                         }
